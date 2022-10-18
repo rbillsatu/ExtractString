@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Ryan Bills">
+    <title>Stringy Thingy</title>
+    <link rel="stylesheet" href="stringy.css">
+    
+    <script>
+        function extractHalf(form){
+            let stringy = document.getElementById("in");
+            console.log(stringy.value);
+            
+            if(stringy.value == ""){
+                document.getElementById("result").innerHTML
+                = "Please enter a string."; 
+            }
+            
+            else if(stringy.value.length % 2 == 0){
+                let half = stringy.value.substr(0, stringy.value.length/2);
+                console.log(half);
+                document.getElementById("result").innerHTML
+                = "You have entered a string that has " + stringy.value.length + " characters.<br>" + 
+                "The first half of your string is: " + "<strong>" + half + "</strong>";  
+            }
+            else{
+                document.getElementById("result").innerHTML
+                = "You have entered a string that has " + stringy.value.length + " characters.<br>" +
+                "This is an odd number.<br>" + "Please enter a string that has an even number of characters."
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Stringy Thingy</h1>
+    </header>
+    <div>
+        <section class="info">
+            <p>
+                Extract the first half of a string of even length.
+                <br>
+                The string entered must be even in length.
+            </p>
+        </section>
+        <section class="info">
+            <form id="stringy">
+                <h2>Please enter your stringy to make a thingy:</h2>
+                <input type="text" id="in">
+                
+                <br><br><br><br><br>
+                
+                <button type="button" class="button" onclick="extractHalf(this.form)">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span>Extract</span>
+                </button>
+                
+                  <br><br><br>
+
+                <p id="result">
+
+                </p>
+            </form>
+        </section>
+    </div>
+</body>
+</html>
